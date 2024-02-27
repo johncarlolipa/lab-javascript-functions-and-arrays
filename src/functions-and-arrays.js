@@ -86,14 +86,14 @@ function avg(mixedArr) {
     } else if (typeof value === 'boolean') {
       total += value ? 1 : 0;
       count++;
-    } else if (typeof value === "string"){
+    } else if (typeof value === 'string') {
       total += value.length;
-      count++
+      count++;
     }
   }
 
-  const average = count > 0 ? total / count : 0
-  return average
+  const average = count > 0 ? total / count : 0;
+  return average;
 }
 
 // Iteration #5: Unique arrays
@@ -111,7 +111,17 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(words) {
+  let uniqueWords = [];
+  for (let word of words) {
+    if (uniqueWords.indexOf(word) === -1) {
+      uniqueWords.push(word);
+    }
+  }
+  return uniqueWords;
+}
+
+console.log(uniquifyArray(wordsUnique));
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
