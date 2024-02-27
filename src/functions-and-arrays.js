@@ -31,13 +31,13 @@ const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 function sumNumbers(numbers) {
   let totalSum = 0;
-  for(let i = 0; i < numbers.length; i++){
-    totalSum += numbers[i]
+  for (let i = 0; i < numbers.length; i++) {
+    totalSum += numbers[i];
   }
-  return totalSum
+  return totalSum;
 }
 
-console.log(sumNumbers(numbers))
+console.log(sumNumbers(numbers));
 
 // Iteration #3.1 Bonus:
 function sum() {}
@@ -46,34 +46,55 @@ function sum() {}
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-
 function averageNumbers(numbersAvg) {
-  let average = 0
-  let totalSum = 0
-  for(let i = 0; i < numbersAvg.length; i++){
-    totalSum += numbersAvg[i]
+  let average = 0;
+  let totalSum = 0;
+  for (let i = 0; i < numbersAvg.length; i++) {
+    totalSum += numbersAvg[i];
   }
-  return average = totalSum / numbersAvg.length
+  return (average = totalSum / numbersAvg.length);
 }
 
-console.log(averageNumbers(numbersAvg))
+console.log(averageNumbers(numbersAvg));
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
+// Bonus - Iteration #4.1
 function averageWordLength(wordsArr) {
-  let totalLetters = 0
-  let averageLetter = 0
-  for(let i = 0; i < wordsArr.length; i++) {
-    totalLetters += wordsArr[i].length
+  let totalLetters = 0;
+  let averageLetter = 0;
+  for (let i = 0; i < wordsArr.length; i++) {
+    totalLetters += wordsArr[i].length;
   }
-  return averageLetter = totalLetters / wordsArr.length
+  return (averageLetter = totalLetters / wordsArr.length);
 }
 
-console.log(averageWordLength(wordsArr))
+console.log(averageWordLength(wordsArr));
 
-// Bonus - Iteration #4.1
-function avg() {}
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
+
+function avg(mixedArr) {
+  let total = 0;
+  let count = 0;
+
+  for (let i = 0; i < mixedArr.length; i++) {
+    let value = mixedArr[i];
+    if (typeof value === 'number') {
+      total += value;
+      count++;
+    } else if (typeof value === 'boolean') {
+      total += value ? 1 : 0;
+      count++;
+    } else if (typeof value === "string"){
+      total += value.length;
+      count++
+    }
+  }
+
+  const average = count > 0 ? total / count : 0
+  return average
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
